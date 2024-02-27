@@ -1,17 +1,17 @@
 import ExerciseContainer from "../components/exerciseContainer";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react"; 
 
 function Exercises() {
     const [exercises, setExercises] = useState([]);
-    const [selectedOption, setSelectedOption] = useState('');
+    // const [selectedOption, setSelectedOption] = useState('');
 
-    const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
+    // const handleSelectChange = (event) => {
+    //     setSelectedOption(event.target.value);
+    // };
 
     const getExercises = async (muscle) => {
         try {
-            const response = await fetch(`http://localhost:5001/exercises/${muscle}`);
+            const response = await fetch(`http://localhost:5001/exercises`);
             const jsonData = await response.json();
             console.log("Received exercises:", jsonData);
             setExercises(jsonData);
@@ -19,21 +19,26 @@ function Exercises() {
             console.error(err.message);
         }
     };
-    
 
     useEffect(() => {
-        console.log("Selected option:", selectedOption);
-        if (selectedOption) {
-            getExercises(selectedOption);
-        }
-    }, [selectedOption]);
+        getExercises();
+    }, []);
+
+    // const response = await fetch(`http://localhost:5001/exercises/${muscle}`);    
+
+    // useEffect(() => {
+    //     console.log("Selected option:", selectedOption);
+    //     if (selectedOption) {
+    //         getExercises(selectedOption);
+    //     }
+    // }, [selectedOption]);
     
     
 
     return ( 
         <Fragment>
             <div className="allExerciseContainer" style={{marginTop: '150px', width: '100%'}}>
-                <div className="selectContainer">
+                {/* <div className="selectContainer">
                     <label>
                         Wähle den Muskel, den du trainieren willst:
                         <select name="selectedFruit" value={selectedOption} onChange={handleSelectChange}>
@@ -46,15 +51,16 @@ function Exercises() {
                             <option value="trizeps">Trizeps</option>
                         </select>
                     </label>
-                </div>
+                </div> */}
                 <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px'}}>
                     {exercises.map((exercise) => (
                         <ExerciseContainer
-                        key={exercise.id}
-                        name={exercise.name}
-                        muscle={exercise.muscle}
-                        type={exercise.type}
-                        description={exercise.description}
+                            key={exercise.id}
+                            name={exercise.name}
+                            muscle={exercise.muscle}
+                            type={exercise.type}
+                            description={exercise.description}
+                            picsrc={exercise.picsrc}
                         />
                 ))}
                 </div>

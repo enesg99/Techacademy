@@ -17,6 +17,9 @@ function App() {
   return (
       <div>
           <MyNavbar />
+          <div style={{margin: "30px", color: "white"}}>
+                <h1>Fitacademy</h1>
+            </div>
           {shouldShowLogin && <Login />}
           <Routes>
             <Route path='/home' element={<Home />} />

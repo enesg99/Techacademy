@@ -1,17 +1,33 @@
 import './exerciseContainer.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Buffer } from 'buffer';
 
-function ExerciseContainer({id, name, type, muscle, description, picSrc}) {
+function ExerciseContainer({ id, name, type, muscle, description, picsrc }) {
+    const [imageUrl, setImageUrl] = useState('');
 
-    const [showPic, setShowPic] = useState(false);
+    // Funktion zur Konvertierung von Binärdaten in einen hexadezimalen String
+    // Funktion zur Konvertierung von Binärdaten in einen hexadezimalen String
+    // Funktion zur Konvertierung von Binärdaten in einen hexadezimalen String
+    function binToHex(binary) {
+        const buffer = Buffer.from(binary);
+        return buffer.toString();
+    }
 
-    return ( 
+    useEffect(() => {
+        // Konvertiere Binärdaten in hexadezimalen String
+        const picHexStr = picsrc ? binToHex(picsrc.data) : '';
+        // Dekodiere hexadezimalen String in URL
+        const url = picHexStr ? decodeURIComponent(picHexStr) : '';
+        setImageUrl(url);
+    }, [picsrc]);
+
+    return (
         <div key={id} id="exerciseContainer">
-            <img id='exercisePic' src={picSrc} />
             <p id="exerciseName">Übung: {name}</p>
             <p id="exerciseMuscle">Muskel: {muscle}</p>
             <p id="exerciseType">Ausführung mit: {type}</p>
             <p id="exerciseDescription">Beschreibung: {description}</p>
+            <img id='exercisePic' src={imageUrl} alt={name} />
         </div>
     );
 }
