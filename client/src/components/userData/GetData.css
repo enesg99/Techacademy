@@ -1,0 +1,58 @@
+.GetDataContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcomeHeader {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.GetDataContainer form {
+    background-color: #CED4DA;
+    padding: 20px 0;
+    width: 50%;
+    border-radius: 50px;
+}
+
+.dataSectionContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.GetDataContainer form label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.GetDataContainer form input, .GetDataContainer form select {
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.dataSectionContainer h1 {
+    text-align: center;
+}
+
+.dataInputContainer {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #495057;
+    color: white;
+    margin-top: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}

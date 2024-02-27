@@ -1,0 +1,14 @@
+.daytrackerContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #CED4DA;
+    width: fit-content;
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.daytrackerContainer h2, #todayDate {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
