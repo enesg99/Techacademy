@@ -1,4 +1,3 @@
-import Daytracker from "../components/daytracker";
 import ExerciseContainer from "../components/exerciseContainer";
 import { Fragment, useEffect, useState } from "react";
 
@@ -33,7 +32,6 @@ function Exercises() {
 
     return ( 
         <Fragment>
-            <Daytracker />
             <div className="allExerciseContainer" style={{marginTop: '150px', width: '100%'}}>
                 <div className="selectContainer">
                     <label>

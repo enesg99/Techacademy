@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
 import './Settings.css';
-import Daytracker from '../components/daytracker';
 
 function Settings({ user }) {
   const [userData, setUserData] = useState([]);
@@ -49,7 +48,6 @@ function Settings({ user }) {
 
   return ( 
     <Fragment>
-        <Daytracker />
         <div className='settingContainer'>
             <label>Wähle den User aus:</label>
             <select onChange={handleSelect} value={selectedUser}>
