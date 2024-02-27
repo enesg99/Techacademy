@@ -1,0 +1,32 @@
+.homeIntroContainer {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#topContainer, #introExerciseContainer, #introNutritionContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.textContent {
+    max-width: 50%;
+}
+
+.textContent h1 {
+    margin-bottom: 18px;
+}
+
+#meditationPic {
+    height: 200px;
+}
+
+button {
+    margin-right: 50px;
+}
